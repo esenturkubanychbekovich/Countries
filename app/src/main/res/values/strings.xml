@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Continents</string>
+    <string name="nameCountry">Страна</string>
+    <string name="cityName">Город</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.esenkubanychbekov.continents;
+package com.esenkubanychbekov.continents.model;
 
 public class Region {
     private String name;
