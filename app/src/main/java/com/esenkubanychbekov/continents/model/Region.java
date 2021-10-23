@@ -1,6 +1,7 @@
 package com.esenkubanychbekov.continents.model;
 
 public class Region {
+    private int id;
     private String name;
     private String capital;
     private int flag;
@@ -9,6 +10,21 @@ public class Region {
         this.name = name;
         this.capital = capital;
         this.flag = flag;
+    }
+
+    public Region(int id, String name, String capital, int flag) {
+        this.id = id;
+        this.name = name;
+        this.capital = capital;
+        this.flag = flag;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {

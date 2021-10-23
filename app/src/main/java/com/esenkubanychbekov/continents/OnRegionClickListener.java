@@ -1,4 +1,7 @@
 package com.esenkubanychbekov.continents;
 
-public interface onRegionClickListener {
+import com.esenkubanychbekov.continents.model.Region;
+
+public interface OnRegionClickListener {
+    void onRegionClick(Region region, int position);
 }

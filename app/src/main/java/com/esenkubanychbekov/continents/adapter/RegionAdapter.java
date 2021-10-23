@@ -10,21 +10,29 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.esenkubanychbekov.continents.OnRegionClickListener;
 import com.esenkubanychbekov.continents.R;
 import com.esenkubanychbekov.continents.model.Region;
 
 import org.w3c.dom.Text;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class RegionAdapter extends RecyclerView.Adapter<RegionAdapter.ViewHolder>{
 
     private LayoutInflater inflater;
-    private  List<Region> regions;
+    private ArrayList<Region> regions;
+    private OnRegionClickListener onClickListener;
 
-    public RegionAdapter(Context context, List<Region> regions) {
+    public RegionAdapter(Context context, ArrayList<Region> regions) {
         this.inflater = LayoutInflater.from(context);
         this.regions = regions;
+    }
+
+    public RegionAdapter(Context context, ArrayList<Region> regions, OnRegionClickListener onClickListener) {
+        this.inflater = LayoutInflater.from(context);
+        this.regions = regions;
+        this.onClickListener = onClickListener;
     }
 
     @NonNull
@@ -41,6 +49,9 @@ public class RegionAdapter extends RecyclerView.Adapter<RegionAdapter.ViewHolder
             holder.image.setImageResource(region.getFlag());
             holder.cityName.setText(region.getName());
             holder.capital.setText(region.getCapital());
+            holder.itemView.setOnClickListener(v -> {
+                onClickListener.onRegionClick(region,position);
+            });
     }
 
     @Override
